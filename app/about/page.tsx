@@ -3,275 +3,280 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | Yatra Holiday - Leading Travel Agency in Nepal",
-  description: "Yatra Holiday is a leading travel agency in Nepal offering international tour packages from Kathmandu with expert guidance and 24/7 support. Established 2012, serving 50,000+ happy travelers.",
-  keywords: [
-    "about Yatra Holiday",
-    "travel agency Nepal",
-    "tour operator Kathmandu",
-    "Nepal travel company",
-    "international tours from Nepal"
-  ],
-  openGraph: {
-    title: "About Us | Yatra Holiday",
-    description: "Leading travel agency in Nepal since 2012. 50,000+ happy travelers served.",
-    images: ["/images/logo.png"],
-  }
+  title: "About Us | Yatra Holiday - Nepal's Premier Travel Agency",
+  description: "Learn about Yatra Holiday, Nepal's leading travel agency established in 2012. Based in Thamel, Kathmandu serving 50,000+ travelers.",
 };
 
 export default function AboutPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "Yatra Holiday",
-    "description": "Leading travel agency in Nepal offering international tour packages from Kathmandu",
-    "foundingDate": "2012",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Thamel",
-      "addressLocality": "Kathmandu",
-      "addressCountry": "NP"
-    },
-    "telephone": "+977-01-4533135",
-    "email": "info@yaatraholiday.com"
-  };
+  const stats = [
+    { value: "12+", label: "Years of Expertise" },
+    { value: "50,000+", label: "Happy Travelers" },
+    { value: "200+", label: "Global Partners" },
+    { value: "4.9★", label: "Average Rating" }
+  ];
 
   return (
-    <div className="bg-surface min-h-screen">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      {/* SECTION 1: HERO SECTION */}
-      <section className="relative w-full h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
-        {/* Background Image & Uniform Dark Overlay */}
+    <main className="bg-surface min-h-screen">
+      {/* HERO SECTION */}
+      <section className="relative w-full h-[600px] md:h-[700px] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=90&w=2000" 
-            alt="Himalayan landscape in Nepal - Yatra Holiday travel banner" 
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1600&q=80" 
+            alt="About Yatra Holiday - Nepal landscape" 
             fill 
             className="object-cover" 
             priority 
+            fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
         </div>
 
-        {/* Content Wrapper - Dead Centered */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center text-center pt-20">
-          
-          {/* Kicker Tag */}
-          <span className="text-primary font-headline font-bold text-xs md:text-sm tracking-[0.3em] uppercase mb-4 drop-shadow-md">
-            Since 2012
-          </span>
-          
-          {/* Main H1 */}
-          <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
-            The most trusted travel <br /> agency in Nepal
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="font-body text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-            Leading the movement for premium travel management, providing curated global adventures from the heart of Kathmandu.
-          </p>
+        <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-8">
+          <div className="max-w-3xl">
+            <span className="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-4 block">
+              Since 2012
+            </span>
+            <h1 className="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8">
+              The most trusted travel <br /> agency in Nepal
+            </h1>
+            <p className="font-body text-xl text-white/90 leading-relaxed mb-10">
+              Leading the movement for premium travel management, providing curated global adventures from the heart of Kathmandu, Nepal.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link 
+                href="#story"
+                className="bg-primary text-white font-headline font-bold uppercase tracking-widest px-10 py-4 hover:bg-primary-container transition-all rounded-none text-sm"
+              >
+                Our Story
+              </Link>
+              <Link 
+                href="/contact"
+                className="bg-white/10 border border-white/30 text-white font-headline font-bold uppercase tracking-widest px-10 py-4 hover:bg-white/20 transition-all rounded-none text-sm backdrop-blur-sm"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* OVERVIEW SECTION */}
-      <section className="py-24 px-8 max-w-4xl mx-auto text-center">
-        <p className="text-secondary text-lg md:text-xl leading-relaxed font-body italic">
-          Yatra Holiday is more than a travel company; we are curators of experience. 
-          We are committed to assist our clients with smart travel choices, offering peculiar holiday packages and extensive hotel list at your 
-          desired destination within competitive prices. It is our earnest motive to make your trips convenient and memorable.
-        </p>
-      </section>
-
-      {/* SECTION 3 — OUR STORY */}
-      <section className="py-32 px-8 max-w-screen-2xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-5">
+      {/* SECTION 1 — BANNER & INTRO */}
+      <section id="story" className="py-24 bg-surface">
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <span className="text-primary font-headline font-bold tracking-widest uppercase text-sm mb-4 block">
               Legacy of Excellence
             </span>
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface leading-tight mb-8 uppercase">
-              Our Story: Redefining the <span className="text-primary">Global Adventure</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-on-surface mb-10">
+              About Yatra Holiday
             </h2>
-            <div className="space-y-6 text-secondary text-lg leading-relaxed font-body">
+            <div className="space-y-8 text-secondary text-lg md:text-xl leading-relaxed font-body">
               <p>
-                Founded in the vibrant heart of Kathmandu, Yatra Holiday emerged from a singular vision: to become the most trusted travel partner in Nepal. 
-                We recognized that travel is not just about the destination, but about the seamless tapestry of experiences that transform a trip into a lifelong memory.
+                Yatra Holiday is a leading travel agency in Nepal and a brand name in the tourism industry, 
+                crafting memorable experiences since 2012. Based in the heart of Thamel, Kathmandu, we serve 
+                discerning travelers with institutional care and localized expertise.
               </p>
               <p>
-                Today, as a leading travel agency in Nepal, we specialize in curated international tour packages from Kathmandu, 
-                bridging the gap between local heritage and global exploration. Our curators meticulously design every itinerary to ensure luxury, authenticity, and profound discovery.
+                We are committed to assisting our clients with smart travel choices, offering bespoke holiday 
+                packages and an extensive collection of premium stays at your desired destination—all within 
+                competitive market pricing.
               </p>
             </div>
           </div>
-          
-          <div className="lg:col-span-7 relative">
-            <div className="relative aspect-[16/10] overflow-hidden editorial-shadow">
-              <Image
-                src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=1200&q=80"
-                alt="Kathmandu Valley Cityscape - Home of Yatra Holiday"
-                fill
-                loading="lazy"
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+        </div>
+      </section>
+
+      {/* SECTION 2 — OUR STORY (Two Column) */}
+      <section className="py-24 bg-surface-container-low">
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-primary font-headline font-bold tracking-widest uppercase text-sm mb-4 block">
+                Our Foundation
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-on-surface mb-8">
+                Founded in the Heart of Kathmandu
+              </h2>
+              <p className="text-secondary text-lg leading-relaxed font-body mb-12">
+                Our journey began with a simple vision: to make international travel accessible, reliable, and deeply meaningful for travelers from Nepal. Over the years, we have built an ecosystem of partners and specialists dedicated to these principles.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-8 mt-12">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <p className="text-4xl font-headline font-black text-primary">{stat.value}</p>
+                    <p className="text-sm font-bold uppercase tracking-widest text-secondary mt-1">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
             
-            {/* Trust Badge */}
-            <div className="absolute -bottom-10 -left-10 hidden md:flex w-56 h-56 bg-white editorial-shadow p-8 flex-col items-center justify-center text-center rounded-none z-10 border border-surface-variant/10">
-              <span className="text-5xl font-headline font-bold text-primary mb-1">12+</span>
-              <span className="text-xs font-headline font-bold uppercase tracking-widest text-secondary leading-tight">
-                Years of Trust <br /> in Nepal Since 2012
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4 — MISSION & VISION */}
-      <section className="bg-surface-container py-32 px-8">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Mission Card */}
-          <div className="bg-surface-container-lowest p-12 rounded-none shadow-sm border-l-4 border-primary">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="material-symbols-outlined text-4xl text-primary" aria-hidden="true">flag</span>
-              <h3 className="text-2xl font-headline font-bold uppercase tracking-tight text-on-surface">Our Mission</h3>
-            </div>
-            <p className="text-secondary text-lg font-body mb-8">
-              Understand clients specific requirements and deliver the best travel package accordingly.
-            </p>
-            <ul className="space-y-4" role="list">
-              {[
-                "Assist clients with smart travel choices",
-                "Offer peculiar holiday packages",
-                "Provide extensive hotel list at desired destinations",
-                "Deliver services within competitive prices"
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-secondary font-body">
-                  <span className="material-symbols-outlined text-primary text-xl" aria-hidden="true">check_circle</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Vision Card */}
-          <div className="bg-surface-container-lowest p-12 rounded-none shadow-sm border-l-4 border-secondary">
-            <div className="flex items-center gap-4 mb-6">
-              <span className="material-symbols-outlined text-4xl text-secondary" aria-hidden="true">visibility</span>
-              <h3 className="text-2xl font-headline font-bold uppercase tracking-tight text-on-surface">Our Vision</h3>
-            </div>
-            <p className="text-secondary text-lg font-body mb-8">
-              Our services extend to hotel and Tour Reservation for enabling you to plan and finalize your economical travel plans.
-            </p>
-            <ul className="space-y-4" role="list">
-              {[
-                "Leading travel agency in Nepal",
-                "Brand name in the tourism industry",
-                "Create memorable experiences for your travel",
-                "Make trips convenient and memorable"
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-secondary font-body">
-                  <span className="material-symbols-outlined text-primary text-xl" aria-hidden="true">check_circle</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5 — WHY CHOOSE US */}
-      <section className="py-32 px-8 max-w-screen-2xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface uppercase tracking-tighter">
-            Why Discerning Travelers <br /> <span className="text-primary">Choose Yatra Holiday</span>
-          </h2>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: "verified_user",
-              title: "Unmatched Expertise",
-              text: "With over a decade of experience, our consultants are masters of logistics, navigating complex visa processes and international requirements with ease."
-            },
-            {
-              icon: "support_agent",
-              title: "24/7 Global Support",
-              text: "Your journey does not end when you board. Our dedicated concierge team is available around the clock to assist you in any time zone across the globe."
-            },
-            {
-              icon: "sell",
-              title: "Price Transparency",
-              text: "Luxury does not have to be opaque. We offer the best market rates for international tour packages from Kathmandu with no hidden fees."
-            }
-          ].map((feature) => (
-            <div 
-              key={feature.title}
-              className="bg-surface-container-lowest p-10 editorial-shadow group hover:bg-primary transition-all duration-500 rounded-none border border-surface-variant/10 cursor-default"
-            >
-              <div className="w-12 h-12 bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mb-8 transition-colors">
-                <span className="material-symbols-outlined text-primary group-hover:text-white transition-colors text-2xl" aria-hidden="true">
-                  {feature.icon}
-                </span>
+            <div className="relative">
+              <div className="relative aspect-square overflow-hidden editorial-shadow">
+                <Image
+                  src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&q=80"
+                  alt="Yatra Holiday Team Inspiration"
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                />
               </div>
-              <h4 className="font-headline font-bold text-xl uppercase tracking-tight text-on-surface mb-4 group-hover:text-white transition-colors">
-                {feature.title}
-              </h4>
-              <p className="text-secondary text-base leading-relaxed font-body group-hover:text-white/90 transition-colors">
-                {feature.text}
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 -right-6 bg-primary text-white p-6 hidden md:block shadow-2xl">
+                <p className="text-3xl font-black font-headline">#1</p>
+                <p className="text-xs font-bold uppercase tracking-widest">Rated Agency</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3 — MISSION & VISION */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <span className="text-primary font-headline font-bold tracking-widest uppercase text-sm mb-4 block">
+              Our Purpose
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-on-surface">
+              Mission & Vision
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+            {/* MISSION CARD */}
+            <div className="bg-surface-container-lowest p-10 editorial-shadow border-l-4 border-primary rounded-none">
+              <span className="material-symbols-outlined text-primary text-4xl mb-6 block">flag</span>
+              <h3 className="text-2xl font-headline font-bold text-on-surface mb-4">Our Mission</h3>
+              <p className="text-secondary text-lg leading-relaxed font-body mb-8">
+                To understand our clients&apos; specific requirements and deliver the absolute best travel packages, services, and support that exceed expectations.
               </p>
+              <ul className="space-y-4">
+                {[
+                  "Assist clients with smart travel choices",
+                  "Offer peculiar holiday packages",
+                  "Provide extensive hotel list",
+                  "Deliver within competitive prices"
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-secondary font-body">
+                    <span className="material-symbols-outlined text-primary text-xl">check_circle</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+
+            {/* VISION CARD */}
+            <div className="bg-surface-container-lowest p-10 editorial-shadow border-l-4 border-secondary rounded-none">
+              <span className="material-symbols-outlined text-secondary text-4xl mb-6 block">visibility</span>
+              <h3 className="text-2xl font-headline font-bold text-on-surface mb-4">Our Vision</h3>
+              <p className="text-secondary text-lg leading-relaxed font-body mb-8">
+                To be the undisputed leader in Nepal&apos;s travel industry, synonymous with trust, quality, and the creation of life-changing memories.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Leading travel agency in Nepal",
+                  "Brand name in tourism industry",
+                  "Create memorable experiences",
+                  "Make trips convenient and memorable"
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-secondary font-body">
+                    <span className="material-symbols-outlined text-secondary text-xl">check_circle</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* SECTION 6 — STATS BAR */}
-      <section className="bg-primary text-white py-16 px-8 max-w-screen-2xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "12+", label: "Years of Expertise" },
-            { value: "50,000+", label: "Happy Travelers" },
-            { value: "200+", label: "Global Partners" },
-            { value: "4.9★", label: "Average Rating" }
-          ].map((stat) => (
+      {/* SECTION 4 — WHY CHOOSE US */}
+      <section className="py-24 bg-surface-container-low">
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <span className="text-primary font-headline font-bold tracking-widest uppercase text-sm mb-4 block">
+              Why Choose Us
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-on-surface">
+              Why Discerning Travelers Choose Yatra Holiday
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[
+              {
+                icon: "verified_user",
+                title: "Unmatched Expertise",
+                text: "With over a decade of experience, we manage complex logistics with ultimate precision and institutional care."
+              },
+              {
+                icon: "support_agent",
+                title: "24/7 Global Support",
+                text: "Our dedicated concierge team is available around the clock to support you at every waypoint in your journey."
+              },
+              {
+                icon: "sell",
+                title: "Price Transparency",
+                text: "We offer the most competitive market rates with zero hidden costs, ensuring complete financial peace of mind."
+              }
+            ].map((card) => (
+              <div 
+                key={card.title} 
+                className="bg-surface-container-lowest p-10 hover:bg-primary group transition-all duration-300 editorial-shadow rounded-none border border-surface-variant/20"
+              >
+                <span className="material-symbols-outlined text-primary group-hover:text-white text-5xl mb-6 block transition-colors">
+                  {card.icon}
+                </span>
+                <h3 className="font-headline font-bold text-xl group-hover:text-white uppercase mb-4 transition-colors">
+                  {card.title}
+                </h3>
+                <p className="text-secondary font-body text-base leading-relaxed group-hover:text-white/80 transition-colors">
+                  {card.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5 — STATS BAR */}
+      <section className="bg-primary text-white py-16 px-8">
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {stats.map((stat) => (
             <div key={stat.label}>
-              <p className="text-4xl md:text-5xl font-headline font-black text-white mb-2">{stat.value}</p>
-              <p className="text-sm font-headline font-bold uppercase tracking-widest text-white/80">{stat.label}</p>
+              <p className="text-5xl font-headline font-black text-white mb-2">{stat.value}</p>
+              <p className="text-sm uppercase tracking-widest text-white/80 font-headline font-bold">{stat.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SECTION 7 — CTA BANNER */}
-      <section className="bg-surface-container py-24 px-8 text-center">
-        <h2 className="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-4 uppercase tracking-tighter">
-          Start Your Journey with Yatra Holiday
-        </h2>
-        <p className="text-xl text-secondary mb-10 font-body max-w-2xl mx-auto leading-relaxed">
-          Contact our travel experts in Thamel, Kathmandu today. We craft perfect journeys for every traveler.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link 
-            href="/packages/china"
-            className="bg-primary text-white font-headline font-bold uppercase tracking-widest px-10 py-4 hover:bg-primary-container transition-all rounded-none shadow-lg text-center"
-            aria-label="Explore our international tour packages"
-          >
-            Explore Packages
-          </Link>
-          <Link 
-            href="/contact"
-            className="bg-surface-container-highest text-on-surface font-headline font-bold uppercase tracking-widest px-10 py-4 hover:bg-surface-container-high transition-all rounded-none shadow-sm text-center"
-            aria-label="Contact our travel agency in Nepal"
-          >
-            Contact Us
-          </Link>
+      {/* SECTION 6 — CTA */}
+      <section className="py-24 bg-surface text-center">
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-on-surface mb-4">
+            Start Your Journey with Yatra Holiday
+          </h2>
+          <p className="text-xl text-secondary mb-12 font-body max-w-2xl mx-auto leading-relaxed">
+            Contact our travel experts in Thamel, Kathmandu today and let us craft your next extraordinary story.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              href="/tours"
+              className="bg-primary text-white font-headline font-bold uppercase tracking-widest px-12 py-4 hover:bg-primary-container transition-all rounded-none text-sm"
+            >
+              Explore Packages
+            </Link>
+            <Link 
+              href="/contact"
+              className="bg-surface-container-highest text-on-surface font-headline font-bold uppercase tracking-widest px-12 py-4 hover:bg-surface-container-high transition-all rounded-none text-sm"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

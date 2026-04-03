@@ -9,7 +9,7 @@ export default function AboutSection() {
           <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
             Legacy of Excellence
           </p>
-          <h2 className="text-on-surface font-headline font-extrabold text-4xl md:text-5xl lg:text-7xl tracking-tighter uppercase leading-[0.9] mb-8">
+          <h2 className="text-on-surface font-headline font-bold text-3xl md:text-5xl tracking-tighter uppercase leading-[0.9] mb-8">
             About <br /> Yatra Holiday
           </h2>
           <div className="space-y-6 max-w-xl text-lg text-secondary leading-relaxed font-body">
@@ -58,7 +58,7 @@ export default function AboutSection() {
               </svg>
             </div>
             
-            <h3 className="font-headline font-extrabold text-4xl md:text-5xl tracking-tighter text-on-surface uppercase mb-8 z-10">
+            <h3 className="font-headline font-semibold text-2xl md:text-3xl tracking-tighter text-on-surface uppercase mb-8 z-10">
               Trusted <br /> Since 2012
             </h3>
             

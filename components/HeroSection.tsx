@@ -25,7 +25,7 @@ export default function HeroSection() {
         </span>
         
         {/* Main H1 */}
-        <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
+        <h1 className="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
           Explore Amazing Places in Nepal and Around the World
         </h1>
         

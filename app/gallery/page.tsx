@@ -1,179 +1,110 @@
-import { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Travel Gallery & Inspirations | Yatra Holiday Nepal",
-  description: "Explore breathtaking landscapes and pristine nature from around the world. Get inspired for your next international journey with Yatra Holiday.",
-  keywords: ["Travel gallery", "Nature photography", "Nepal travel agency", "World landscapes", "Yatra Holiday gallery"],
-};
+const galleryImages = [
+  { id: 1, category: "Nepal", image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80", title: "Annapurna Sanctuary" },
+  { id: 2, category: "China", image: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&q=80", title: "Forbidden City, Beijing" },
+  { id: 3, category: "Germany", image: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=800&q=80", title: "Old Town Heritage" },
+  { id: 4, category: "Himalaya", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80", title: "Annapurna South Peak" },
+  { id: 5, category: "Nepal", image: "https://images.unsplash.com/photo-1647679147029-508c62f35c33?auto=format&fit=crop&q=80&w=1200", title: "Chitwan Jungle Safari" },
+  { id: 6, category: "Vietnam", image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80", title: "Halong Bay Cruise" },
+  { id: 7, category: "UK", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80", title: "Parliament, London" },
+  { id: 8, category: "Nepal", image: "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&q=80", title: "Kathmandu Ancient City" },
+  { id: 9, category: "Japan", image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80", title: "Kyoto Golden Temple" },
+  { id: 10, category: "France", image: "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80", title: "Eiffel Tower, Paris" },
+  { id: 11, category: "Nepal", image: "https://images.unsplash.com/photo-1636108151241-efc8f359be24?w=800&q=80", title: "Lumbini Heritage" },
+  { id: 12, category: "Indonesia", image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80", title: "Bali Tropical Escapes" },
+  { id: 13, category: "Switzerland", image: "https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?w=800&q=80", title: "Central Swiss Alps" },
+  { id: 14, category: "Nepal", image: "https://images.unsplash.com/photo-1540324155974-7523202daa3f?w=800&q=80", title: "Phewa Lake, Pokhara" },
+  { id: 15, category: "Malaysia", image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80", title: "Kuala Lumpur Skyline" },
+  { id: 16, category: "UAE", image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80", title: "Dubai Urban Sands" },
+  { id: 17, category: "Egypt", image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?w=800&q=80", title: "Pyramids of Giza" },
+  { id: 18, category: "Thailand", image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80", title: "Phi Phi Island Coast" },
+  { id: 19, category: "Turkey", image: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=80", title: "Istanbul Heritage" },
+  { id: 20, category: "Bhutan", image: "https://images.unsplash.com/photo-1621640786029-220e9ff8dd09?w=800&q=80", title: "Tiger's Nest Monastery" }
+];
 
 export default function GalleryPage() {
-  const images = [
-    {
-      label: "Nepal",
-      location: "Himalayas",
-      src: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=90&w=1200",
-      span: "col-span-1 md:col-span-2 row-span-2"
-    },
-    {
-      label: "Bali",
-      location: "Indonesia",
-      src: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=1200",
-      span: "col-span-1 row-span-1"
-    },
-    {
-      label: "Switzerland",
-      location: "The Alps",
-      src: "https://images.unsplash.com/photo-1531366936337-77b508f7ce19?q=80&w=1200",
-      span: "col-span-1 row-span-1"
-    },
-    {
-      label: "Japan",
-      location: "Mt Fuji",
-      src: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1200",
-      span: "col-span-1 row-span-2"
-    },
-    {
-      label: "Vietnam",
-      location: "Ha Long Bay",
-      src: "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=1200",
-      span: "col-span-1 row-span-1"
-    },
-    {
-      label: "Thailand",
-      location: "Islands",
-      src: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=1200",
-      span: "col-span-1 md:col-span-2 row-span-1"
-    },
-    {
-      label: "Iceland",
-      location: "Northern Lights",
-      src: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1200",
-      span: "col-span-1 row-span-1"
-    },
-    {
-      label: "Scotland",
-      location: "Highlands",
-      src: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=1200",
-      span: "col-span-1 md:col-span-2 row-span-1"
-    },
-    {
-      label: "Maldives",
-      location: "Ocean",
-      src: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1200",
-      span: "col-span-1 row-span-1"
-    },
-    {
-      label: "Greece",
-      location: "Santorini",
-      src: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1200",
-      span: "col-span-1 row-span-1"
-    },
-    {
-      label: "Dubai",
-      location: "Desert",
-      src: "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?q=80&w=1200",
-      span: "col-span-1 row-span-1"
-    },
-    {
-      label: "Singapore",
-      location: "Gardens",
-      src: "https://images.unsplash.com/photo-1525596662741-e94ff9f26de1?q=80&w=1200",
-      span: "col-span-1 md:col-span-3 row-span-1"
-    }
-  ];
-
   return (
-    <main className="pb-24 bg-surface min-h-screen">
-      {/* SECTION 1: HERO SECTION */}
-      <section className="relative w-full h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
-        {/* Background Image & Uniform Dark Overlay */}
+    <main className="bg-surface min-h-screen">
+      {/* HERO SECTION */}
+      <section className="relative w-full h-[600px] md:h-[700px] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=90&w=2000" 
-            alt="World Landscapes and Pristine Nature - Yatra Holiday Lookbook" 
+            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80" 
+            alt="Yatra Holiday Gallery" 
             fill 
             className="object-cover" 
             priority 
+            fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
         </div>
 
-        {/* Content Wrapper - Dead Centered */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center text-center pt-20">
-          
-          {/* Kicker Tag */}
-          <span className="text-primary font-headline font-bold text-xs md:text-sm tracking-[0.3em] uppercase mb-4 drop-shadow-md">
-            The Lookbook
-          </span>
-          
-          {/* Main H1 */}
-          <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
-            The World In Focus
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="font-body text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto leading-relaxed mb-10 drop-shadow-md">
-            Curated glimpses of pristine nature and awe-inspiring landscapes from our favorite global destinations.
-          </p>
+        <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-8">
+          <div className="max-w-3xl">
+            <span className="text-primary font-headline font-bold text-sm tracking-widest uppercase mb-4 block">
+              The Lookbook
+            </span>
+            <h1 className="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8">
+              A visual journey <br /> through the world
+            </h1>
+            <p className="font-body text-xl text-white/90 leading-relaxed mb-10">
+              Capturing the profound beauty and untold stories of the destinations we serve. From the highest peaks to the ancient cities.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* SECTION 2: THE GRID */}
-      <section className="max-w-[1400px] mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-[350px]">
-          {images.map((image, index) => (
-            <div 
-              key={index} 
-              className={`relative overflow-hidden group w-full h-full rounded-none shadow-md cursor-pointer ${image.span}`}
-            >
-              <Image
-                src={image.src}
-                alt={`${image.label} nature photography by Yatra Holiday`}
-                fill
-                className="object-cover rounded-none group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-              />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="text-primary font-headline font-bold text-xs uppercase tracking-widest mb-2 block">
-                    {image.location}
-                  </span>
-                  <h3 className="text-white font-headline font-bold text-2xl uppercase tracking-wider">
-                    {image.label}
-                  </h3>
+      {/* MASONRY GALLERY - CLEAN WALL */}
+      <section className="py-24 bg-surface-container-low">
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <div className="columns-1 sm:columns-2 lg:columns-4 gap-8 space-y-8">
+            {galleryImages.map((img) => (
+              <div 
+                key={img.id} 
+                className="break-inside-avoid relative overflow-hidden group editorial-shadow rounded-none aspect-auto bg-surface-container-lowest"
+              >
+                <div className="relative w-full h-full min-h-[250px]">
+                  <Image
+                    src={img.image}
+                    alt={img.title}
+                    width={800}
+                    height={1000}
+                    loading="lazy"
+                    className="w-full h-auto object-cover group-hover:scale-110 transition-all duration-1000"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                    <span className="text-primary font-bold text-xs uppercase tracking-widest mb-2">
+                      {img.category}
+                    </span>
+                    <h3 className="text-white font-headline font-bold text-lg uppercase leading-tight">
+                      {img.title}
+                    </h3>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* SECTION 3: CALL TO ACTION */}
-      <section className="relative w-full overflow-hidden mt-12">
-        {/* Background Image & Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image 
-            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=90&w=2000" 
-            alt="Luxury alpine destination - Yatra Holiday travel inspiration" 
-            fill 
-            className="object-cover" 
-          />
-          <div className="absolute inset-0 bg-black/70"></div>
-        </div>
-
-        {/* Content Wrapper */}
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-32 md:py-48 text-center">
-          <h2 className="font-editorial text-4xl md:text-5xl lg:text-6xl text-white mb-12 tracking-tight drop-shadow-2xl">
-            Ready to step <br /> into the frame?
+      {/* CTA SECTION */}
+      <section className="py-24 bg-surface text-center">
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-on-surface mb-4">
+            Create Your Own Memories
           </h2>
+          <p className="text-xl text-secondary mb-12 font-body max-w-2xl mx-auto leading-relaxed">
+            Every photo tells a story. We are here to help you live yours. Book your next journey with Yatra Holiday today.
+          </p>
           <Link 
             href="/contact"
-            className="inline-block bg-primary text-white border border-white/20 font-headline font-bold uppercase tracking-[0.2em] px-12 py-6 hover:bg-white hover:text-primary transition-all duration-300 rounded-none shadow-2xl text-center"
+            className="inline-block bg-primary text-white font-headline font-bold uppercase tracking-widest px-12 py-4 hover:bg-primary-container transition-all rounded-none text-sm"
           >
-            Start Planning
+            Explore Packages
           </Link>
         </div>
       </section>

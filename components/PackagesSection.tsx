@@ -11,7 +11,7 @@ export default function PackagesSection() {
           <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
             Global Getaways
           </p>
-          <h2 className="text-on-surface font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tighter uppercase leading-none mb-6">
+          <h2 className="text-on-surface font-headline font-bold text-3xl md:text-4xl lg:text-5xl tracking-tighter uppercase leading-none mb-6">
             International Packages
           </h2>
           <p className="text-secondary font-body text-lg leading-relaxed">
@@ -43,7 +43,7 @@ export default function PackagesSection() {
                   {pkg.country}
                 </div>
                 
-                <h3 className="font-headline font-extrabold uppercase tracking-tight text-xl text-on-surface mb-3 group-hover:text-primary transition-colors">
+                <h3 className="font-headline font-semibold uppercase tracking-tight text-xl text-on-surface mb-3 group-hover:text-primary transition-colors">
                   {pkg.name}
                 </h3>
                 

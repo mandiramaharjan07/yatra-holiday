@@ -11,7 +11,7 @@ export default function DestinationsSection() {
             <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
               Adventure Awaits
             </p>
-            <h2 className="text-4xl md:text-6xl font-headline font-extrabold tracking-tighter uppercase leading-none">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold tracking-tighter uppercase leading-none">
               Discover Places <br className="hidden md:block" /> Around Nepal
             </h2>
           </div>
@@ -48,20 +48,12 @@ export default function DestinationsSection() {
                 <span className="text-[#ff6b6b] font-headline font-black uppercase text-[10px] tracking-[0.3em] mb-4 block">
                   {dest.category}
                 </span>
-                <h3 className="text-3xl font-headline font-bold uppercase tracking-tight mb-6 leading-none">
+                <h3 className="text-3xl font-headline font-semibold uppercase tracking-tight mb-6 leading-none">
                   {dest.title}
                 </h3>
                 <p className="text-white/0 group-hover:text-white/100 transition-all duration-500 delay-100 line-clamp-3 text-sm leading-relaxed font-body">
                   {dest.description}
                 </p>
-                <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                   <button 
-                     className="flex items-center gap-2 text-xs font-headline font-bold tracking-widest uppercase border-b border-primary pb-1 hover:text-primary transition-colors"
-                     aria-label={`View details about ${dest.title}`}
-                   >
-                     View Details <span className="material-symbols-outlined text-sm" aria-hidden="true">north_east</span>
-                   </button>
-                </div>
               </div>
             </div>
           ))}

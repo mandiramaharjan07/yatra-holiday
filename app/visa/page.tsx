@@ -56,8 +56,8 @@ export default function VisaPage() {
           </span>
           
           {/* Main H1 */}
-          <h1 className="font-editorial text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6 drop-shadow-2xl">
-            Seamless Visa Assistance for Global Mobility
+          <h1 className="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-8 drop-shadow-2xl">
+            Seamless Visa Assistance <br /> for Global Mobility
           </h1>
           
           {/* Subtitle */}
@@ -81,7 +81,7 @@ export default function VisaPage() {
               <span className="text-primary font-headline font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
                 Our Expertise
               </span>
-              <h2 className="font-editorial text-4xl leading-tight mb-8 text-on-surface uppercase tracking-tight">
+              <h2 className="font-headline font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-8 text-on-surface uppercase tracking-tight">
                 International Visa Assistance <br /> with a Human Touch
               </h2>
               <p className="text-secondary leading-loose font-body mb-12">
@@ -112,7 +112,7 @@ export default function VisaPage() {
 
             {/* Popular Destinations */}
             <div>
-              <h2 className="font-editorial text-3xl mb-8 border-t border-surface-variant/50 pt-12 text-on-surface uppercase tracking-tight">
+              <h2 className="font-headline font-bold text-3xl mb-8 border-t border-surface-variant/50 pt-12 text-on-surface uppercase tracking-tight">
                 Popular Destinations from Kathmandu
               </h2>
               <div className="grid grid-cols-3 gap-4">
@@ -149,7 +149,7 @@ export default function VisaPage() {
             <span className="text-primary font-headline font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
               The Yatra Advantage
             </span>
-            <h2 className="font-editorial text-4xl md:text-5xl text-on-surface uppercase tracking-tighter leading-none">
+            <h2 className="font-headline font-bold text-3xl md:text-4xl lg:text-5xl text-on-surface uppercase tracking-tighter leading-none">
               Why Kathmandu Trusts Us
             </h2>
           </div>

@@ -39,7 +39,7 @@
   --color-on-error-container: #93000a;
   --color-surface-tint: #c00012;
 
-  --font-headline: var(--font-manrope);
+  --font-headline: "Playfair Display", serif;
   --font-body: var(--font-work-sans);
   --font-label: var(--font-work-sans);
 
@@ -47,6 +47,10 @@
   --radius-lg: 0.25rem;
   --radius-xl: 0.5rem;
   --radius-full: 0.75rem;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

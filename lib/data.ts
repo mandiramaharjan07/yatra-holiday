@@ -21,7 +21,7 @@ export const services = [
 
 export const destinations = [
   { category: "Adventure", title: "Trekking in Nepal", description: "Explore the roof of the world through legendary trails like Everest Base Camp and Annapurna Circuit.", image: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070&auto=format&fit=crop" },
-  { category: "Wildlife", title: "Safari in Chitwan", description: "Witness rhinos, tigers, and exotic birdlife in the jungles of Chitwan and Bardia National Parks.", image: "https://images.unsplash.com/photo-1581432240292-628f80459345?q=80&w=2073&auto=format&fit=crop" },
+  { category: "Wildlife", title: "Safari in Chitwan", description: "Witness rhinos, tigers, and exotic birdlife in the jungles of Chitwan and Bardia National Parks.", image: "https://images.unsplash.com/photo-1647679147029-508c62f35c33?auto=format&fit=crop&q=80&w=1200" },
   { category: "Nature", title: "Camping in Valleys", description: "Connect with the raw wilderness under a blanket of stars in the most remote valleys of Nepal.", image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070&auto=format&fit=crop" },
   { category: "Expedition", title: "Peak Climbing", description: "Conquer challenging peaks with our certified mountain guides and professional safety gear.", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" },
 ];

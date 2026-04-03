@@ -40,7 +40,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Center Links (Desktop) */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
@@ -51,7 +50,7 @@ export default function Navbar() {
                 className={`font-headline uppercase tracking-widest text-sm transition-all pb-1 ${
                   isActive
                     ? "text-primary border-b-2 border-primary font-bold"
-                    : "text-zinc-600 hover:text-primary transition-colors"
+                    : "text-zinc-600 hover:text-primary transition-colors hover:border-b-2 hover:border-primary/30"
                 }`}
               >
                 {link.name}
@@ -62,12 +61,13 @@ export default function Navbar() {
 
         {/* Right Action */}
         <div className="flex items-center gap-4">
-          <button 
+          <Link 
+            href="/contact"
             className="hidden sm:block bg-primary text-white font-headline font-bold uppercase tracking-widest text-xs px-8 py-3 hover:bg-primary-container active:scale-95 transition-all rounded-none"
             aria-label="Book a trip now"
           >
             Book Now
-          </button>
+          </Link>
           
           {/* Mobile Menu Toggle */}
           <button
@@ -83,55 +83,70 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Backdrop */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
       {/* Mobile Drawer */}
-      <div
-        className={`lg:hidden fixed inset-0 z-40 bg-white transition-transform duration-300 transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        aria-hidden={!isOpen}
-      >
-        <div className="flex flex-col h-full p-8">
-          <div className="flex justify-between items-center mb-12">
-            <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)} aria-label="Yatra Holiday Home">
-              <Image
-                src="/images/logo.png"
-                alt="Yatra Holiday Logo"
-                width={140}
-                height={48}
-                className="h-10 w-auto object-contain"
-                priority
-                sizes="140px"
-              />
-            </Link>
-            <button onClick={() => setIsOpen(false)} aria-label="Close menu">
-              <span className="material-symbols-outlined text-3xl" aria-hidden="true">close</span>
-            </button>
-          </div>
-          <div className="flex flex-col gap-6">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`font-headline font-bold uppercase tracking-widest text-2xl transition-colors ${
-                    isActive ? "text-primary border-l-4 border-primary pl-4" : "text-on-surface hover:text-primary"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
-          <div className="mt-auto">
-            <button 
-              className="w-full bg-primary text-white font-headline font-bold uppercase tracking-widest py-4 hover:bg-primary-container transition-all rounded-none"
-              aria-label="Book a trip now"
-            >
-              Book Now
-            </button>
-          </div>
+      <div className={`
+        fixed top-0 left-0 w-full h-screen 
+        bg-white z-50 transform transition-transform 
+        duration-300 ease-in-out overflow-y-auto
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'}
+      `}>
+        {/* Header with logo and close button */}
+        <div className="flex justify-between items-center 
+          px-8 py-4 border-b border-surface-container">
+          <Image src="/images/logo.png" 
+            alt="Yatra Holiday" 
+            width={140} height={48}
+            className="h-10 w-auto" />
+          <button 
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+            className="text-on-surface">
+            <span className="material-symbols-outlined 
+              text-3xl">close</span>
+          </button>
+        </div>
+
+        {/* Nav Links */}
+        <nav className="flex flex-col px-8 py-8 gap-2">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`font-headline font-bold uppercase 
+                tracking-widest text-lg py-4 border-b 
+                border-surface-container transition-colors ${
+                  isActive ? 'text-primary border-l-4 border-primary pl-4' : 'text-on-surface hover:text-primary'
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Book Now button */}
+        <div className="px-8 mt-4">
+          <Link
+            href="/contact"
+            onClick={() => setIsOpen(false)}
+            className="block w-full bg-primary text-white 
+            text-center font-headline font-bold uppercase 
+            tracking-widest py-4 hover:bg-primary-container 
+            transition-all rounded-none"
+          >
+            Book Now
+          </Link>
         </div>
       </div>
     </nav>

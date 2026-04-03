@@ -1,16 +1,15 @@
 import type { Metadata } from "next";
-import { Manrope, Work_Sans, Newsreader } from "next/font/google";
+import { Playfair_Display, Work_Sans, Newsreader } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const manrope = Manrope({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '600', '700', '800'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
   preload: true,
   variable: '--font-headline',
-  adjustFontFallback: true,
 });
 
 const workSans = Work_Sans({
@@ -105,7 +104,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${manrope.variable} ${workSans.variable} ${newsreader.variable}`}>
+    <html lang="en" className={`${playfairDisplay.variable} ${workSans.variable} ${newsreader.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

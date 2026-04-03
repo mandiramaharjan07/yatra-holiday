@@ -9,7 +9,7 @@ export default function ServicesSection() {
           <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
             What We Offer
           </p>
-          <h2 className="text-on-surface font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl tracking-tighter uppercase leading-none">
+          <h2 className="text-on-surface font-headline font-bold text-3xl md:text-4xl lg:text-5xl tracking-tighter uppercase leading-none">
             Comprehensive Travel Services
           </h2>
         </div>
@@ -26,7 +26,7 @@ export default function ServicesSection() {
                   {service.icon}
                 </span>
               </div>
-              <h3 className="font-headline font-bold text-xl mb-4 group-hover:text-white uppercase tracking-tight transition-colors duration-300">
+              <h3 className="font-headline font-semibold text-xl mb-4 group-hover:text-white uppercase tracking-tight transition-colors duration-300">
                 {service.title}
               </h3>
               <p className="text-zinc-600 group-hover:text-white/80 leading-relaxed font-body text-base transition-colors duration-300">

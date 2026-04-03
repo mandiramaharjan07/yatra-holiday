@@ -60,33 +60,65 @@ export default async function PackagePage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "TouristTrip",
-            "name": `${pkg.name} Tour Package from Nepal`,
-            "description": pkg.description,
-            "touristType": "Cultural, Adventure",
-            "itinerary": {
-              "@type": "ItemList",
-              "itemListElement": pkg.itinerary.map((day, i) => ({
-                "@type": "ListItem",
-                "position": i + 1,
-                "name": day.title,
-              })),
-            },
-            "provider": {
-              "@type": "TravelAgency",
-              "name": "Yatra Holiday",
-              "url": "https://yatraholiday.com",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Thamel",
-                "addressLocality": "Kathmandu",
-                "addressCountry": "NP",
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "TouristTrip",
+              "name": `${pkg.name} Tour Package from Nepal`,
+              "description": pkg.description,
+              "touristType": "Cultural, Adventure",
+              "itinerary": {
+                "@type": "ItemList",
+                "itemListElement": pkg.itinerary.map((day, i) => ({
+                  "@type": "ListItem",
+                  "position": i + 1,
+                  "name": day.title,
+                })),
               },
-              "telephone": "+977-01-4533135",
+              "provider": {
+                "@type": "TravelAgency",
+                "name": "Yatra Holiday",
+                "url": "https://yatraholiday.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Thamel",
+                  "addressLocality": "Kathmandu",
+                  "addressCountry": "NP",
+                },
+                "telephone": "+977-01-4533135",
+              },
             },
-          }),
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": `How do I book ${pkg.name} tour from Nepal?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Contact Yatra Holiday in Thamel, Kathmandu at +977-01-4533135 or email info@yaatraholiday.com",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  "name": `What is included in ${pkg.name} tour package?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": pkg.inclusions.join(", "),
+                  },
+                },
+                {
+                  "@type": "Question",
+                  "name": `How many days is the ${pkg.name} tour?`,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `${pkg.duration} and ${pkg.nights}`,
+                  },
+                },
+              ],
+            },
+          ]),
         }}
       />
 
@@ -115,7 +147,7 @@ export default async function PackagePage({ params }: Props) {
           </nav>
           
           <div className="max-w-4xl">
-            <h1 className="text-white font-headline font-extrabold text-5xl md:text-8xl tracking-tighter mb-4 leading-tight uppercase">
+            <h1 className="text-white font-headline font-extrabold text-4xl md:text-6xl tracking-tighter mb-4 leading-tight uppercase">
               {pkg.name}
             </h1>
             <p className="text-white/90 text-2xl md:text-3xl font-body italic mb-12">
@@ -147,7 +179,7 @@ export default async function PackagePage({ params }: Props) {
           <span className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-sm block mb-4">
             Exclusively Curated
           </span>
-          <h2 className="text-4xl md:text-6xl font-headline font-extrabold text-on-surface mb-10 leading-[0.95] tracking-tight uppercase">
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-on-surface mb-10 leading-[0.95] tracking-tight uppercase">
             The Ultimate <br /> {pkg.name} Journey
           </h2>
           <div className="space-y-8 text-on-surface-variant text-xl leading-relaxed font-body">
@@ -173,7 +205,7 @@ export default async function PackagePage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* LEFT COLUMN: ITINERARY */}
           <div className="lg:col-span-8">
-            <h3 className="text-3xl font-headline font-extrabold text-on-surface uppercase tracking-tight border-b border-surface-container-highest pb-8 mb-12">
+            <h3 className="text-3xl font-headline font-semibold text-on-surface uppercase tracking-tight border-b border-surface-container-highest pb-8 mb-12">
               Detailed {pkg.duration} Itinerary
             </h3>
             
@@ -189,7 +221,7 @@ export default async function PackagePage({ params }: Props) {
                     )}
                   </div>
                   <div className="pb-12">
-                    <h4 className="font-headline font-bold text-2xl text-on-surface uppercase tracking-tight mb-3 pt-2">
+                    <h4 className="font-headline font-semibold text-2xl text-on-surface uppercase tracking-tight mb-3 pt-2">
                       {item.title}
                     </h4>
                     <p className="text-secondary text-lg leading-relaxed font-body max-w-3xl">
@@ -237,7 +269,7 @@ export default async function PackagePage({ params }: Props) {
 
                 <div className="border-t border-surface-container my-8" />
 
-                <h4 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface mb-6">
+                <h4 className="font-headline font-semibold text-lg uppercase tracking-tight text-on-surface mb-6">
                   Package Inclusions
                 </h4>
                 <ul className="space-y-4" role="list" aria-label="Package inclusions">
@@ -252,7 +284,7 @@ export default async function PackagePage({ params }: Props) {
 
               {/* INQUIRY BOX */}
               <div className="bg-zinc-900 p-8 text-white">
-                <h4 className="font-headline font-bold text-xl uppercase tracking-tighter mb-2">
+                <h4 className="font-headline font-semibold text-xl uppercase tracking-tighter mb-2">
                   Interested in this package?
                 </h4>
                 <p className="text-sm text-zinc-400 mb-8 font-body leading-relaxed">
@@ -283,7 +315,7 @@ export default async function PackagePage({ params }: Props) {
             <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
               Curated Experiences
             </p>
-            <h2 className="text-4xl md:text-6xl font-headline font-extrabold text-on-surface uppercase tracking-tighter">
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-on-surface uppercase tracking-tighter">
               Package Highlights
             </h2>
           </div>
@@ -297,7 +329,7 @@ export default async function PackagePage({ params }: Props) {
                 <span className="material-symbols-outlined text-5xl text-primary mb-8 block transition-transform group-hover:scale-110">
                   {highlight.icon}
                 </span>
-                <h4 className="font-headline font-extrabold text-xl text-on-surface uppercase tracking-tight mb-4 group-hover:text-primary transition-colors">
+                <h4 className="font-headline font-semibold text-xl text-on-surface uppercase tracking-tight mb-4 group-hover:text-primary transition-colors">
                   {highlight.title}
                 </h4>
                 <p className="text-secondary text-base leading-relaxed font-body">
@@ -315,7 +347,7 @@ export default async function PackagePage({ params }: Props) {
           <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
             Visual Narrative
           </p>
-          <h2 className="text-4xl md:text-6xl font-headline font-extrabold text-on-surface uppercase tracking-tighter">
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-on-surface uppercase tracking-tighter">
             Authentic Moments
           </h2>
         </div>
@@ -343,7 +375,53 @@ export default async function PackagePage({ params }: Props) {
         </div>
       </section>
 
-      {/* SECTION 6 — INQUIRY CTA BANNER */}
+      {/* SECTION 6 — COMMON QUESTIONS (FAQ) */}
+      <section className="py-32 px-8 bg-white border-t border-surface-variant/10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
+              Common Questions
+            </p>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-on-surface uppercase tracking-tighter">
+              Expert Insights
+            </h2>
+          </div>
+          
+          <div className="space-y-12">
+            <div>
+              <h3 className="font-headline font-semibold text-xl text-on-surface uppercase tracking-tight mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 flex items-center justify-center bg-primary text-white text-xs">Q</span>
+                How do I book {pkg.name} tour from Nepal?
+              </h3>
+              <p className="text-secondary text-lg leading-relaxed font-body pl-11">
+                Contact Yatra Holiday in Thamel, Kathmandu at +977-01-4533135 or email info@yaatraholiday.com. Our experts will guide you through the seamless booking process, from itinerary customization to final documentation.
+              </p>
+            </div>
+            
+            <div className="pt-6 border-t border-surface-variant/10">
+              <h3 className="font-headline font-bold text-xl text-on-surface uppercase tracking-tight mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 flex items-center justify-center bg-primary text-white text-xs">Q</span>
+                What is included in {pkg.name} tour package?
+              </h3>
+              <p className="text-secondary text-lg leading-relaxed font-body pl-11 capitalize">
+                {pkg.inclusions.join(", ")}. We ensure all core logistics are handled so you can focus entirely on the journey.
+              </p>
+            </div>
+            
+            <div className="pt-6 border-t border-surface-variant/10">
+              <h3 className="font-headline font-bold text-xl text-on-surface uppercase tracking-tight mb-4 flex items-center gap-3">
+                <span className="w-8 h-8 flex items-center justify-center bg-primary text-white text-xs">Q</span>
+                How many days is the {pkg.name} tour?
+              </h3>
+              <p className="text-secondary text-lg leading-relaxed font-body pl-11">
+                The {pkg.name} tour spans {pkg.duration} and {pkg.nights}. This timeframe is expertly calculated to balance immersive exploration with comfortable transit and luxury rest.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 — INQUIRY CTA BANNER */}
       <section className="bg-primary text-white py-24 px-8 text-center relative overflow-hidden">
         {/* Background Text Decor */}
         <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-headline font-black opacity-5 pointer-events-none select-none uppercase whitespace-nowrap">
@@ -351,7 +429,7 @@ export default async function PackagePage({ params }: Props) {
         </span>
         
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-7xl font-headline font-extrabold tracking-tighter mb-6 uppercase leading-[0.9]">
+          <h2 className="text-3xl md:text-5xl font-headline font-extrabold tracking-tighter mb-6 uppercase leading-[0.9]">
             Ready to Explore <br /> {pkg.name}?
           </h2>
           <p className="text-xl md:text-2xl text-white/90 mb-12 font-body max-w-2xl mx-auto leading-relaxed">
