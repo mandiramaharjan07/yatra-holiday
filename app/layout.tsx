@@ -104,7 +104,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${playfairDisplay.variable} ${workSans.variable} ${newsreader.variable}`}>
+    <html lang="en" className={`${playfairDisplay.variable} ${workSans.variable} ${newsreader.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

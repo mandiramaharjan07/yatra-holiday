@@ -27,7 +27,7 @@ export const destinations = [
 ];
 
 export const packages = [
-  { 
+  {
     slug: "china",
     country: "China",
     name: "CHINA",
@@ -64,11 +64,11 @@ export const packages = [
     gallery: [
       "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&q=80",
       "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80",
-      "https://images.unsplash.com/photo-1537531393629-b52f535b7c16?w=800&q=80",
+      "https://images.unsplash.com/photo-1543097692-fa13c6cd8595?w=800&q=80",
       "https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?w=800&q=80"
     ]
   },
-  { 
+  {
     slug: "vietnam",
     country: "Vietnam",
     name: "VIETNAM",
@@ -76,8 +76,8 @@ export const packages = [
     nights: "5 Nights",
     destinations: ["Da Nang", "Hoi An", "Hanoi", "Halong Bay"],
     description: "Cruise Ha Long Bay, explore Hoi An lantern streets and taste the best pho in Hanoi on this unforgettable Vietnam heritage trail.",
-    heroImage: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1600&q=80",
-    image: "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=1200",
     highlights: [
       { icon: "sailing", title: "Halong Bay Cruise", description: "UNESCO World Heritage cruise through thousands of limestone karst islands" },
       { icon: "temple_buddhist", title: "Hoi An Ancient Town", description: "Living museum of old-town architecture with magical lantern boat ride" },
@@ -104,11 +104,11 @@ export const packages = [
     gallery: [
       "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&q=80",
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=800&q=80",
-      "https://images.unsplash.com/photo-1540543903561-bcc706e7b2fd?w=800&q=80",
+      "https://images.unsplash.com/photo-1513781050488-6dd358209a1b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1573270689103-d7a4e42b609a?w=800&q=80"
     ]
   },
-  { 
+  {
     slug: "london-england-scotland",
     country: "London, England & Scotland",
     name: "LONDON ENGLAND AND SCOTLAND",
@@ -149,7 +149,7 @@ export const packages = [
       "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=800&q=80"
     ]
   },
-  { 
+  {
     slug: "europe",
     country: "Europe",
     name: "EUROPE",
@@ -194,7 +194,7 @@ export const packages = [
       "https://images.unsplash.com/photo-1543429257-3eb0b65d9c58?w=800&q=80"
     ]
   },
-  { 
+  {
     slug: "japan-osaka",
     country: "Japan",
     name: "JAPAN OSAKA",
@@ -236,7 +236,7 @@ export const packages = [
       "https://images.unsplash.com/photo-1528181304800-259b08848526?w=800&q=80"
     ]
   },
-  { 
+  {
     slug: "bali",
     country: "Bali",
     name: "BALI",
@@ -244,8 +244,8 @@ export const packages = [
     nights: "4 Nights",
     destinations: ["Tanjung Benoa", "Uluwatu", "Ubud", "Tanah Lot"],
     description: "Rice terraces, sacred temples, luxury villas and stunning sunsets in the worlds most magical island — Bali, Island of the Gods.",
-    heroImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600&q=80",
-    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200",
     highlights: [
       { icon: "surfing", title: "Water Sports", description: "Banana boat, parasailing and jet ski at Tanjung Benoa Beach" },
       { icon: "temple_buddhist", title: "Uluwatu Temple", description: "Ancient Balinese sea temple perched 70 metres above the Indian Ocean" },
@@ -273,10 +273,10 @@ export const packages = [
       "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80",
       "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=800&q=80",
       "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=80",
-      "https://images.unsplash.com/photo-1559628233-100c798642d7?w=800&q=80"
+      "https://images.unsplash.com/photo-1543097692-fa13c6cd8595?w=800&q=80"
     ]
   },
-  { 
+  {
     slug: "southeast-asia",
     country: "Thailand · Singapore · Malaysia",
     name: "THAILAND + SINGAPORE + MALAYSIA",
@@ -284,8 +284,8 @@ export const packages = [
     nights: "9 Nights",
     destinations: ["Kuala Lumpur", "Genting Highland", "Singapore", "Pattaya", "Bangkok"],
     description: "Three iconic destinations in one epic journey — Bangkok streets, Singapore skyline and Kuala Lumpur towers in one premium combo package.",
-    heroImage: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=1600&q=80",
-    image: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
+    heroImage: "https://images.unsplash.com/photo-1704266429711-822bac6970f1?auto=format&fit=crop&q=85&w=1200",
+    image: "https://images.unsplash.com/photo-1704266429711-822bac6970f1?auto=format&fit=crop&q=85&w=1200",
     highlights: [
       { icon: "apartment", title: "Petronas Towers", description: "Genting Highland tour and iconic Petronas Twin Towers in Kuala Lumpur" },
       { icon: "rocket_launch", title: "Singapore Sentosa", description: "Sentosa Island with cable car, Madame Tussauds and Wings of Time show" },
@@ -318,10 +318,10 @@ export const packages = [
       "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?w=800&q=80",
       "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80",
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&q=80",
-      "https://images.unsplash.com/photo-1601925228008-f4e29b05fafc?w=800&q=80"
+      "https://images.unsplash.com/photo-1644618142962-aad7c06f2857?q=80&w=1212&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     ]
   },
-  { 
+  {
     slug: "thailand",
     country: "Thailand",
     name: "THAILAND",

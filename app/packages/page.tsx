@@ -81,7 +81,7 @@ export default function PackagesPage() {
       {/* SECTION 1: HERO BANNER */}
       <section className="relative h-[716px] flex items-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1544016768-982d1554f0b9?auto=format&fit=crop&q=80&w=1200"
           alt="International Tour Packages background by Yatra Holiday"
           fill
           priority
@@ -159,6 +159,8 @@ export default function PackagesPage() {
                       src={pkg.image}
                       alt={`${pkg.name} tour package from Kathmandu`}
                       fill
+                      priority
+                      fetchPriority="high"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                       sizes="(max-width: 768px) 100vw, 25vw"
                     />
@@ -208,14 +210,14 @@ export default function PackagesPage() {
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 transition-colors group-hover:bg-primary group-hover:text-white rounded-none">
                   <span className="material-symbols-outlined text-2xl" aria-hidden="true">concierge</span>
                 </div>
-                <h4 className="font-headline font-bold text-sm uppercase tracking-widest mb-2">24/7 Concierge</h4>
+                <h3 className="font-headline font-bold text-sm uppercase tracking-widest mb-2">24/7 Concierge</h3>
                 <p className="text-[10px] text-secondary font-body uppercase tracking-[0.05em]">Dedicated world-class support for all clients.</p>
               </div>
               <div className="group">
                 <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4 transition-colors group-hover:bg-primary group-hover:text-white rounded-none">
                   <span className="material-symbols-outlined text-2xl" aria-hidden="true">description</span>
                 </div>
-                <h4 className="font-headline font-bold text-sm uppercase tracking-widest mb-2">Visa Experts</h4>
+                <h3 className="font-headline font-bold text-sm uppercase tracking-widest mb-2">Visa Experts</h3>
                 <p className="text-[10px] text-secondary font-body uppercase tracking-[0.05em]">Professional facilitation for all destinations.</p>
               </div>
             </div>

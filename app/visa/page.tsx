@@ -43,6 +43,7 @@ export default function VisaPage() {
             fill 
             className="object-cover" 
             priority 
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
@@ -159,9 +160,9 @@ export default function VisaPage() {
               <div className="text-primary mb-6">
                 <span className="material-symbols-outlined text-5xl" aria-hidden="true">edit_note</span>
               </div>
-              <h4 className="font-headline font-extrabold text-lg text-on-surface uppercase tracking-tight mb-4">
+              <h3 className="font-headline font-extrabold text-lg text-on-surface uppercase tracking-tight mb-4">
                 Expert Consultation
-              </h4>
+              </h3>
               <p className="text-secondary font-body text-sm leading-relaxed">
                 Personalized interview coaching and documentation checklists tailored to individual embassy requirements.
               </p>
@@ -171,9 +172,9 @@ export default function VisaPage() {
               <div className="text-primary mb-6">
                 <span className="material-symbols-outlined text-5xl" aria-hidden="true">description</span>
               </div>
-              <h4 className="font-headline font-extrabold text-lg text-on-surface uppercase tracking-tight mb-4">
+              <h3 className="font-headline font-extrabold text-lg text-on-surface uppercase tracking-tight mb-4">
                 Document Attestation
-              </h4>
+              </h3>
               <p className="text-secondary font-body text-sm leading-relaxed">
                 Full support for notary and government attestations required for international visa approvals.
               </p>
@@ -183,9 +184,9 @@ export default function VisaPage() {
               <div className="text-primary mb-6">
                 <span className="material-symbols-outlined text-5xl" aria-hidden="true">support_agent</span>
               </div>
-              <h4 className="font-headline font-extrabold text-lg text-on-surface uppercase tracking-tight mb-4">
+              <h3 className="font-headline font-extrabold text-lg text-on-surface uppercase tracking-tight mb-4">
                 24/7 Support
-              </h4>
+              </h3>
               <p className="text-secondary font-body text-sm leading-relaxed">
                 Dedicated account managers available around the clock to track your application and answer queries.
               </p>

@@ -125,57 +125,98 @@ export default function ContactPage() {
                     <form onSubmit={handleSubmit} className="space-y-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-secondary">Full Name</label>
+                          <label 
+                            htmlFor="full-name"
+                            className="block text-sm font-body font-bold text-secondary uppercase tracking-widest mb-2"
+                          >
+                            Full Name
+                          </label>
                           <input 
+                            id="full-name"
                             name="name"
                             type="text" 
                             required 
                             placeholder="John Doe"
+                            aria-label="Your full name"
                             className="w-full bg-surface-container-high border-b-2 border-surface-variant/30 focus:border-primary px-4 py-4 outline-none font-body transition-all rounded-none"
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-secondary">Email Address</label>
+                          <label 
+                            htmlFor="email"
+                            className="block text-sm font-body font-bold text-secondary uppercase tracking-widest mb-2"
+                          >
+                            Email Address
+                          </label>
                           <input 
+                            id="email"
                             name="email"
                             type="email" 
                             required 
                             placeholder="john@example.com"
+                            aria-label="Your email address"
                             className="w-full bg-surface-container-high border-b-2 border-surface-variant/30 focus:border-primary px-4 py-4 outline-none font-body transition-all rounded-none"
                           />
                         </div>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-secondary">Phone Number</label>
+                          <label 
+                            htmlFor="phone"
+                            className="block text-sm font-body font-bold text-secondary uppercase tracking-widest mb-2"
+                          >
+                            Phone Number
+                          </label>
                           <input 
+                            id="phone"
                             name="phone"
                             type="tel" 
                             required 
                             placeholder="+977"
+                            aria-label="Your contact number"
                             className="w-full bg-surface-container-high border-b-2 border-surface-variant/30 focus:border-primary px-4 py-4 outline-none font-body transition-all rounded-none"
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-xs font-bold uppercase tracking-widest text-secondary">Destination</label>
+                          <label 
+                            htmlFor="destination"
+                            className="block text-sm font-body font-bold text-secondary uppercase tracking-widest mb-2"
+                          >
+                            Select Destination
+                          </label>
                           <select 
+                            id="destination"
                             name="destination"
+                            aria-label="Select your destination"
                             className="w-full bg-surface-container-high border-b-2 border-surface-variant/30 focus:border-primary px-4 py-4 outline-none font-body transition-all rounded-none appearance-none"
                           >
-                            <option>International Tour</option>
-                            <option>Domestic Trekking</option>
-                            <option>Visa Service</option>
-                            <option>Other / General</option>
+                            <option value="">Select Destination...</option>
+                            <option value="china">China</option>
+                            <option value="vietnam">Vietnam</option>
+                            <option value="london">London England Scotland</option>
+                            <option value="europe">Europe</option>
+                            <option value="japan">Japan Osaka</option>
+                            <option value="bali">Bali</option>
+                            <option value="southeast-asia">Thailand + Singapore + Malaysia</option>
+                            <option value="thailand">Thailand</option>
+                            <option value="other">Other</option>
                           </select>
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs font-bold uppercase tracking-widest text-secondary">Your Message</label>
+                        <label 
+                          htmlFor="message"
+                          className="block text-sm font-body font-bold text-secondary uppercase tracking-widest mb-2"
+                        >
+                          Your Message
+                        </label>
                         <textarea 
+                          id="message"
                           name="message"
-                          rows={5} 
+                          rows={4} 
                           required 
                           placeholder="How can we help you plan your journey?"
+                          aria-label="Your message"
                           className="w-full bg-surface-container-high border-b-2 border-surface-variant/30 focus:border-primary px-4 py-4 outline-none font-body transition-all rounded-none resize-none"
                         ></textarea>
                       </div>

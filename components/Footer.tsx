@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { navLinks, services } from "@/lib/data";
-import { FaFacebook, FaWhatsapp, FaViber } from 'react-icons/fa';
-import { FaTiktok } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
@@ -40,26 +38,50 @@ export default function Footer() {
             
             {/* Social Icons - Alignment Refined */}
             <div className="flex items-center gap-4">
-              {[
-                { icon: <FaFacebook size={18} />, href: "https://facebook.com/yatraholiday", label: "Facebook" },
-                { icon: <FaTiktok size={18} />, href: "https://tiktok.com/@yatraholiday", label: "TikTok" },
-                { icon: <FaWhatsapp size={18} />, href: "https://wa.me/9779801234567", label: "WhatsApp" },
-                { icon: <FaViber size={18} />, href: "viber://chat?number=9779801234567", label: "Viber" }
-              ].map((social) => (
-                <a 
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Follow Yatra Holiday on ${social.label}`}
-                  className="w-10 h-10 bg-white border border-zinc-200 
-                  hover:bg-primary hover:text-white hover:border-primary
-                  text-on-surface flex items-center justify-center 
-                  transition-all duration-300 rounded-none shadow-sm"
-                >
-                  {social.icon}
-                </a>
-              ))}
+              {/* Facebook */}
+              <a href="https://facebook.com/yatraholiday"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="w-10 h-10 bg-surface-container hover:bg-primary hover:text-white text-on-surface flex items-center justify-center transition-all duration-300 rounded-none">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+
+              {/* TikTok */}
+              <a href="https://tiktok.com/@yatraholiday"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="w-10 h-10 bg-surface-container hover:bg-primary hover:text-white text-on-surface flex items-center justify-center transition-all duration-300 rounded-none">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.24 8.24 0 0 0 4.83 1.56V6.79a4.85 4.85 0 0 1-1.06-.1z"/>
+                </svg>
+              </a>
+
+              {/* WhatsApp */}
+              <a href="https://wa.me/9779801234567"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="w-10 h-10 bg-surface-container hover:bg-primary hover:text-white text-on-surface flex items-center justify-center transition-all duration-300 rounded-none">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.122 1.528 5.855L.057 23.925l6.235-1.635A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.376l-.36-.214-3.7.971.988-3.607-.235-.372A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+                </svg>
+              </a>
+
+              {/* Viber */}
+              <a href="viber://chat?number=9779801234567"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Viber"
+                className="w-10 h-10 bg-surface-container hover:bg-primary hover:text-white text-on-surface flex items-center justify-center transition-all duration-300 rounded-none">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.985 0C5.366 0 0 5.367 0 11.985c0 2.651.876 5.1 2.336 7.08L.811 23.25l4.28-1.369A11.938 11.938 0 0 0 11.985 24C18.604 24 24 18.633 24 12.015 24 5.367 18.604 0 11.985 0zm5.95 16.989c-.317.893-1.564 1.647-2.565 1.864-.683.145-1.574.261-4.573-1.012-3.838-1.607-6.315-5.5-6.507-5.753-.184-.253-1.548-2.059-1.548-3.929 0-1.87.976-2.781 1.322-3.16.317-.347.692-.433.923-.433.23 0 .462.002.664.012.213.01.499-.081.781.595.29.693.988 2.413 1.073 2.589.086.177.144.383.029.612-.116.23-.173.374-.346.577-.173.202-.363.452-.519.607-.173.173-.353.36-.152.706.202.347.897 1.481 1.926 2.398 1.323 1.178 2.439 1.542 2.786 1.714.347.173.548.145.75-.087.202-.231.866-.1.013-1.183.462-.231.923-.462 1.004-.491.318-.116.635.029.867.231.231.202 1.505 1.414 1.76 1.66.26.248.433.635.115 1.529z"/>
+                </svg>
+              </a>
             </div>
           </div>
 

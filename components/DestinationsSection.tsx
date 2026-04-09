@@ -8,7 +8,7 @@ export default function DestinationsSection() {
         {/* Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <p className="text-primary font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
+            <p className="text-[#ff6b6b] font-headline font-bold tracking-[0.3em] uppercase text-xs mb-4">
               Adventure Awaits
             </p>
             <h2 className="text-3xl md:text-5xl font-headline font-bold tracking-tighter uppercase leading-none">

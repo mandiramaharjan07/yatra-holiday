@@ -63,7 +63,7 @@ export default function VisaForm() {
     }
   };
 
-  const labelStyle = "block font-headline font-bold text-sm uppercase tracking-widest mb-3 text-on-surface border-l-4 border-primary pl-3";
+  const labelStyle = "block text-sm font-body font-bold text-secondary uppercase tracking-widest mb-2";
   const inputStyle = "w-full bg-surface-container-low border border-surface-variant/30 px-4 py-4 focus:outline-none focus:border-primary transition-colors font-body rounded-none text-on-surface";
 
   return (
@@ -92,37 +92,54 @@ export default function VisaForm() {
         <form className="space-y-8" onSubmit={handleSubmit}>
           {/* DESTINATION */}
           <div>
-            <label className={labelStyle}>Destination:</label>
+            <label htmlFor="destination" className={labelStyle}>Select Destination</label>
             <select 
+              id="destination"
+              name="destination"
               required
+              aria-label="Select your destination"
               className={inputStyle}
               value={formData.destination}
               onChange={(e) => setFormData({...formData, destination: e.target.value})}
             >
-              <option value="">Select Destination</option>
-              {destinations.map(d => <option key={d} value={d}>{d}</option>)}
+              <option value="">Select Destination...</option>
+              <option value="china">China</option>
+              <option value="vietnam">Vietnam</option>
+              <option value="london">London England Scotland</option>
+              <option value="europe">Europe</option>
+              <option value="japan">Japan Osaka</option>
+              <option value="bali">Bali</option>
+              <option value="southeast-asia">Thailand + Singapore + Malaysia</option>
+              <option value="thailand">Thailand</option>
+              <option value="other">Other</option>
             </select>
           </div>
 
           {/* TRAVELERS */}
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <label className={labelStyle}>Adults:</label>
+              <label htmlFor="adults" className={labelStyle}>Adults</label>
               <input 
+                id="adults"
+                name="adults"
                 type="number" 
                 min="1" 
                 required
+                aria-label="Number of adults"
                 className={inputStyle}
                 value={formData.adults}
                 onChange={(e) => setFormData({...formData, adults: e.target.value})}
               />
             </div>
             <div>
-              <label className={labelStyle}>Children:</label>
+              <label htmlFor="children" className={labelStyle}>Children</label>
               <input 
+                id="children"
+                name="children"
                 type="number" 
                 min="0" 
                 required
+                aria-label="Number of children"
                 className={inputStyle}
                 value={formData.children}
                 onChange={(e) => setFormData({...formData, children: e.target.value})}
@@ -133,21 +150,28 @@ export default function VisaForm() {
           {/* DATES */}
           <div className="grid grid-cols-2 gap-6">
             <div>
-              <label className={labelStyle}>Travel Date:</label>
+              <label htmlFor="travel-date" className={labelStyle}>Travel Date</label>
               <input 
+                id="travel-date"
+                name="travel-date"
                 type="date" 
                 required
+                aria-label="Preferred travel date"
                 className={inputStyle}
                 value={formData.date}
                 onChange={(e) => setFormData({...formData, date: e.target.value})}
               />
             </div>
             <div>
-              <label className={labelStyle}>Duration (Days):</label>
+              <label htmlFor="duration" className={labelStyle}>Duration (Days)</label>
               <input 
+                id="duration"
+                name="duration"
                 type="number" 
+                min="1"
                 required
-                placeholder="Days" 
+                placeholder="Number of days" 
+                aria-label="Trip duration in days"
                 className={inputStyle}
                 value={formData.duration}
                 onChange={(e) => setFormData({...formData, duration: e.target.value})}
@@ -157,31 +181,48 @@ export default function VisaForm() {
 
           {/* PERSONAL DETAILS */}
           <div className="space-y-6">
-            <label className={labelStyle}>Personal Details:</label>
-            <input 
-              type="text" 
-              required
-              placeholder="Full Name" 
-              className={inputStyle}
-              value={formData.name}
-              onChange={(e) => setFormData({...formData, name: e.target.value})}
-            />
-            <input 
-              type="email" 
-              required
-              placeholder="Email Address" 
-              className={inputStyle}
-              value={formData.email}
-              onChange={(e) => setFormData({...formData, email: e.target.value})}
-            />
-            <input 
-              type="tel" 
-              required
-              placeholder="Contact Number" 
-              className={inputStyle}
-              value={formData.contact}
-              onChange={(e) => setFormData({...formData, contact: e.target.value})}
-            />
+            <div>
+              <label htmlFor="full-name" className={labelStyle}>Full Name</label>
+              <input 
+                id="full-name"
+                name="full-name"
+                type="text" 
+                required
+                placeholder="Your Full Name" 
+                aria-label="Your full name"
+                className={inputStyle}
+                value={formData.name}
+                onChange={(e) => setFormData({...formData, name: e.target.value})}
+              />
+            </div>
+            <div>
+              <label htmlFor="visa-email" className={labelStyle}>Email Address</label>
+              <input 
+                id="visa-email"
+                name="email"
+                type="email" 
+                required
+                placeholder="Your Email Address" 
+                aria-label="Your email address"
+                className={inputStyle}
+                value={formData.email}
+                onChange={(e) => setFormData({...formData, email: e.target.value})}
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className={labelStyle}>Contact Number</label>
+              <input 
+                id="phone"
+                name="phone"
+                type="tel" 
+                required
+                placeholder="Your Phone Number" 
+                aria-label="Your contact number"
+                className={inputStyle}
+                value={formData.contact}
+                onChange={(e) => setFormData({...formData, contact: e.target.value})}
+              />
+            </div>
           </div>
 
           <button 
